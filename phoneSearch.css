@@ -12,6 +12,19 @@ body{
 #search-result button{
     text-align: center;
     margin: auto;
+    border-radius: 8px;
+}
+#search-result img{
+    width: 80%;
+    margin: auto;
+}
+#phone-details .card{
+    border-radius: 20px;
+    background-color: rgba(225, 235, 245, 0.137);
+}
+#phone-details img{
+    width: 60%;
+    margin: auto;
 }
 .box{
     border-radius: 15px;
@@ -24,16 +37,6 @@ span{
     color: rgb(216, 148, 22);
     font-weight: 700;
 }
-
-
-
-
-
-
-
-
-
-
 
 #spinner{
     display: none;

@@ -50,7 +50,7 @@ const displaySearchResult = meals =>{
             <a target="blank" href="${meal.strYoutube}" class="btn btn-primary">See Tutorial</a>
           </div>
         </div>
-          `;
+          `; 
           searchResult.appendChild(div);
       })
 }
