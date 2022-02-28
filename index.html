@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link rel="stylesheet" href="phoneSearch.css">
+</head>
+
+<body class="bg-gray">
+    <div class="container content">
+        <h2 class="text-center text-success pt-5 mb-4">Phone Finder</h2>
+    <!-- phone search area -->
+    <div class="input-group mb-3 mx-auto w-50">
+        <input id="search-field" type="text" class="form-control p-3" placeholder="Search Phone"
+            aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button onclick="searchPhone()" class="btn btn-outline-secondary" type="button"
+            id="button-search">Search</button>
+    </div>
+    <div>
+        <p id="error-message" class=" text-danger  text-center py-3">Something Went Wrong Please try again later!!</p>
+        <p id="error-name" class=" text-danger  text-center py-3">Please Search a Phone Name!!</p>
+    </div>
+    <div id="spinner">Loading...</div>
+
+    <!-- single phone details -->
+    <div id="phone-details" class="w-75 mx-auto py-2">
+    </div>
+
+    <!-- phone search result -->
+    <div id="search-result" class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 p-2 p-lg-5">
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5ct99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+    <script src="js/phone.js"></script>
+</body>
+
+</html>
