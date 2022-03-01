@@ -43,10 +43,10 @@ const displaySearchResult = phones =>{
         div.classList.add('col');
         div.innerHTML = `
         <div class="card h-100 box ">
-        <img src="${phone.image}" class="card-img-top  pt-3" alt="...">
+        <img src="${phone.image}" class="card-img-top mb-4 pt-3" alt="...">
         <div class="card-body text-center">
           <h5 class="card-title text-center mb-3 fw-bold">${phone.brand} ${phone.phone_name}</h5>
-          <button type="button" onclick="loadPhoneDetail('${phone.slug}')" class="btn btn-primary ">See Details</button>
+          <button type="button" onclick="loadPhoneDetail('${phone.slug}')" class="btn btn-primary mb-3 ">See Details</button>
         </div>
       </div>
         `;
@@ -71,11 +71,15 @@ const displayPhoneDetail = phone =>{
     <div class="card h-100 box px-lg-3 py-3">
             <img src="${phone.image}" class="card-img-top px-3 pt-3" alt="...">
             <div class="card-body text-center">
-              <h4 class="card-title text-center mb-3 fw-bold">${phone.brand} ${phone.name} Full Specifications</h4>
-                <p>${phone.releaseDate}</p>
+              <h4 class="card-title text-center mb-3 fw-bold">${phone.brand} ${phone.name} <br> Full Specifications</h4>
+                <p>${phone.releaseDate?phone.releaseDate:'<span class="text-danger">Not found release date</span>'}</p>
                 <div class="row p-1">
                     <div class="col-lg-3 col-md-4 col-4  text-start fw-bold">ChipSet</div>
                     <div class="col-lg-9 col-md-8 col-8 text-start text-md-start">: ${phone.mainFeatures.chipSet}</div>
+                </div> 
+                <div class="row p-1">
+                    <div class="col-lg-3 col-md-4 col-4  text-start fw-bold">Brand</div>
+                    <div class="col-lg-9 col-md-8 col-8 text-start text-md-start">: ${phone.brand}</div>
                 </div> 
                 <div class="row p-1">
                     <div class="col-lg-3 col-md-4  text-start col-4 fw-bold">Display Size</div>
@@ -95,10 +99,31 @@ const displayPhoneDetail = phone =>{
                 </div> 
                 <div class="row p-1">
                     <div class="col-lg-3 col-md-4 text-start col-4 fw-bold">Bluetooth</div>
-                    <div class="col-lg-9 col-md-8 text-start text-md-start col-8">: ${phone?.others?.Bluetooth}</div>
+                    <div class="col-lg-9 col-md-8 text-start text-md-start col-8">: ${phone.others?.Bluetooth??'5.0, A2DP, LE'}</div>
+                </div> 
+                <div class="row p-1">
+                    <div class="col-lg-3 col-md-4 text-start col-4 fw-bold">GPS</div>
+                    <div class="col-lg-9 col-md-8 text-start text-md-start col-8">: ${phone.others?.GPS??'Yes'}</div>
+                </div> 
+                <div class="row p-1">
+                    <div class="col-lg-3 col-md-4 text-start col-4 fw-bold">NFC</div>
+                    <div class="col-lg-9 col-md-8 text-start text-md-start col-8">: ${phone.others?.NFC??'No'}</div>
+                </div> 
+                <div class="row p-1">
+                    <div class="col-lg-3 col-md-4 text-start col-4 fw-bold">Radio</div>
+                    <div class="col-lg-9 col-md-8 text-start text-md-start col-8">: ${phone.others?.Radio??'Yes'}</div>
+                </div> 
+                <div class="row p-1">
+                    <div class="col-lg-3 col-md-4 text-start col-4 fw-bold">USB</div>
+                    <div class="col-lg-9 col-md-8 text-start text-md-start col-8">: ${phone.others?.USB??'No'}</div>
+                </div> 
+                <div class="row p-1">
+                    <div class="col-lg-3 col-md-4 text-start col-4 fw-bold">WLAN</div>
+                    <div class="col-lg-9 col-md-8 text-start text-md-start col-8">: ${phone.others?.WLAN??'Wi-Fi 802.11 a/b/g/n/ac/6'}</div>
                 </div> 
             </div>
           </div>
         `;
     phoneDetails.appendChild(div);
+    
 }

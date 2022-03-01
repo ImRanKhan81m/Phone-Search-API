@@ -14,6 +14,9 @@ body{
     margin: auto;
     border-radius: 8px;
 }
+#phone-details{
+    width: 50%;
+}
 #search-result img{
     width: 80%;
     margin: auto;
@@ -33,11 +36,17 @@ footer{
     font-weight: 600;
     font-size: 18px;
 }
-span{
-    color: rgb(216, 148, 22);
-    font-weight: 700;
-}
+
 
 #spinner{
     display: none;
+}
+
+@media (max-width: 800px){
+    #phone-details{
+        width: 100% !important;
+    }
+    .h4, h4 {
+        font-size: calc(1.575rem + .3vw);
+    }
 }
