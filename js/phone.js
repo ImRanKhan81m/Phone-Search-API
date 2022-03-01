@@ -66,13 +66,33 @@ const displayPhoneDetail = phone =>{
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML =`
-    <div class="card h-100 box">
-        <img src="${phone.image}" class="card-img-top px-3 pt-3" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title text-center mb-3 fw-bold">${phone.brand} ${phone.name}</h5>
-            <p>${phone.releaseDate}</p> 
-        </div>
-      </div>
+    <div class="card h-100 box px-lg-3 py-3">
+            <img src="${phone.image}" class="card-img-top px-3 pt-3" alt="...">
+            <div class="card-body text-center">
+              <h4 class="card-title text-center mb-3 fw-bold">${phone.brand} ${phone.name} Full Specifications</h4>
+                <p>${phone.releaseDate}</p>
+                <div class="row p-1">
+                    <div class="col-lg-3 col-md-4 col-4  text-start fw-bold">ChipSet</div>
+                    <div class="col-lg-9 col-md-8 col-8 text-start text-md-start">: ${phone.mainFeatures.chipSet}</div>
+                </div> 
+                <div class="row p-1">
+                    <div class="col-lg-3 col-md-4  text-start col-4 fw-bold">Display Size</div>
+                    <div class="col-lg-9 col-md-8 text-start text-md-start col-8">: ${phone.mainFeatures.displaySize}</div>
+                </div> 
+                <div class="row p-1">
+                    <div class="col-lg-3 col-md-4  text-start col-4 fw-bold">Memory</div>
+                    <div class="col-lg-9 col-md-8 text-start text-md-start col-8">: ${phone.mainFeatures.memory}</div>
+                </div> 
+                <div class="row p-1">
+                    <div class="col-lg-3 col-md-4  text-start col-4 fw-bold">Sensors</div>
+                    <div class="col-lg-9 col-md-8 text-start text-md-start col-8">: ${phone.mainFeatures.sensors}</div>
+                </div> 
+                <div class="row p-1">
+                    <div class="col-lg-3 col-md-4 text-start col-4 fw-bold">Storage</div>
+                    <div class="col-lg-9 col-md-8 text-start text-md-start col-8">: ${phone.mainFeatures.storage}</div>
+                </div> 
+            </div>
+          </div>
         `;
     phoneDetails.appendChild(div);
 }
