@@ -2,7 +2,7 @@
 document.getElementById('error-message').style.display = 'none';
 document.getElementById('error-name').style.display = 'none';
 
-
+// onclick search button
 const searchPhone = () =>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
@@ -23,7 +23,9 @@ const searchPhone = () =>{
        .catch(error => displayError(error));
     }
     displayPhoneDetail()='';
+    displaySearchResult()='';
 }
+// error handling
 const displayError = error => {
     displaySearchResult()='';
     displayPhoneDetail()='';
@@ -32,6 +34,7 @@ const displayError = error => {
     
 }
 
+// show search phone result
 const displaySearchResult = phones =>{
     console.log(phones)
     const searchResult = document.getElementById('search-result');
@@ -64,6 +67,7 @@ const loadPhoneDetail = phoneId =>{
       .then(data => displayPhoneDetail(data.data))
 }
 
+// show phone details
 const displayPhoneDetail = phone =>{
     console.log(phone)
     const phoneDetails = document.getElementById('phone-details');
